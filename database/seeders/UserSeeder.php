@@ -6,9 +6,9 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
-class RoleSeeder extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,9 +17,10 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
-            'name' => Str::random(10),
-            'service_id' => 1,
+        DB::table('users')->insert([
+            'name' => 'Jamie Shaw',
+            'email' => 'jamie@sha.wtf',
+            'password' => Hash::make('password'),
             'created_at' => Date::now(),
             'updated_at' => Date::now()
         ]);
