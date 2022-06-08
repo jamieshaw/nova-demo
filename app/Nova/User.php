@@ -41,7 +41,7 @@ class User extends Resource
      *
      * @var int
      */
-    public static $priority = 3;
+    public static $priority = 10;
 
     /**
      * Get the fields displayed by the resource.

@@ -18,4 +18,9 @@ class Role extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function scopes()
+    {
+        return $this->hasMany(Scope::class);
+    }
 }

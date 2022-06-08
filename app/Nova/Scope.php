@@ -3,27 +3,25 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Role extends Resource
+class Scope extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = \App\Models\Role::class;
+    public static $model = \App\Models\Scope::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'title';
 
     /**
      * The columns that should be searched.
@@ -39,7 +37,7 @@ class Role extends Resource
      *
      * @var int
      */
-    public static $priority = 2;
+    public static $priority = 3;
 
     /**
      * Get the fields displayed by the resource.
@@ -52,13 +50,9 @@ class Role extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')->sortable(),
+            Text::make('name'),
 
-            BelongsTo::make('Service'),
-
-            BelongsToMany::make('Users'),
-
-            HasMany::make('Scopes')
+            BelongsTo::make('Role')
         ];
     }
 
