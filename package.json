@@ -7,7 +7,9 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "build-checkbox-field": "cd nova-components/CheckboxField && npm run dev",
+        "build-checkbox-field-prod": "cd nova-components/CheckboxField && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.25",
