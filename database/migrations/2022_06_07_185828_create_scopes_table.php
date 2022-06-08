@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('scopes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('role_id')->unsigned();
             $table->integer('scope_bit')->unsigned();
             $table->timestamps();
         });
