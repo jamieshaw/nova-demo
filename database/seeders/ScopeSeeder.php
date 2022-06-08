@@ -20,7 +20,7 @@ class ScopeSeeder extends Seeder
         DB::table('scopes')->insert([
             'name' => 'View Users',
             'scope_key' => 'user_model',
-            'scope_bit' => 0,
+            'scope_bit' => 1,
             'created_at' => Date::now(),
             'updated_at' => Date::now()
         ]);
