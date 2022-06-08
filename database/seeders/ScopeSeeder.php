@@ -18,8 +18,8 @@ class ScopeSeeder extends Seeder
     public function run()
     {
         DB::table('scopes')->insert([
-            'name' => Str::random(10),
-            'role_id' => 1,
+            'name' => 'View Users',
+            'scope_key' => 'user_model',
             'scope_bit' => 0,
             'created_at' => Date::now(),
             'updated_at' => Date::now()

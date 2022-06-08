@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Jamieshaw\CheckboxField\CheckboxField;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -53,6 +52,8 @@ class Scope extends Resource
             ID::make()->sortable(),
 
             Text::make('Name'),
+
+            Text::make('Scope Key'),
 
             BelongsToMany::make('Role'),
 
