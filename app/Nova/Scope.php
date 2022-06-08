@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use Jamieshaw\CheckboxField\CheckboxField;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -22,7 +23,7 @@ class Scope extends Resource
      *
      * @var string
      */
-    public static $title = 'title';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -53,7 +54,7 @@ class Scope extends Resource
 
             Text::make('Name'),
 
-            BelongsTo::make('Role'),
+            BelongsToMany::make('Role'),
 
             CheckboxField::make('Scopes', 'scope_bit')->actions()
         ];

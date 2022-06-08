@@ -21,6 +21,6 @@ class Role extends Model
 
     public function scopes()
     {
-        return $this->hasMany(Scope::class);
+        return $this->belongsToMany(Scope::class);
     }
 }

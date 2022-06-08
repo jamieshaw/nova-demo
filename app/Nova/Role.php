@@ -58,7 +58,7 @@ class Role extends Resource
 
             BelongsToMany::make('Users'),
 
-            HasMany::make('Scopes')
+            BelongsToMany::make('Scopes')
         ];
     }
 
