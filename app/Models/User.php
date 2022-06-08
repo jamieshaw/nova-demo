@@ -50,18 +50,13 @@ class User extends Authenticatable
     }
 
     /**
-     * Determine if user has "Super Admin" role (determined by regex).
+     * Determine if user has "Super Admin" role (first role by ID).
      *
      * @return PhpOption\T|PhpOption\S|void
      */
     public function isSuperAdmin()
     {
-        /* Pattern for applying "Super Admin" rights to user. */
-        $pattern = '/^.*super.?admin.*$/i';
-
-        foreach ($this->roles as $role) {
-            return Regex::matches($pattern, $role->name)->success()->getOrElse(false);
-        }
+        return $this->roles->contains('id', 1);
     }
 
     /**
